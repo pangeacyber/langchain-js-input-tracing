@@ -35,10 +35,14 @@ export class PangeaAuditCallbackHandler extends BaseTracer {
       return;
     }
 
-    await this.client.logBulk([{
-      event_input: (run.inputs.messages as BaseMessage[][]).flat().map(({ content }) => content),
-      event_tools: run.name,
-      event_type: 'inference:user_prompt',
-    }]);
+    await this.client.logBulk([
+      {
+        event_input: (run.inputs.messages as BaseMessage[][])
+          .flat()
+          .map(({ content }) => content),
+        event_tools: run.name,
+        event_type: 'inference:user_prompt',
+      },
+    ]);
   }
 }
