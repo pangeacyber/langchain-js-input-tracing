@@ -6,6 +6,8 @@
   "license": "MIT0",
   "scripts": {
     "demo": "tsx index.ts",
+    "format": "biome format",
+    "lint": "biome lint",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
